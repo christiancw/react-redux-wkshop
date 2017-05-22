@@ -11,7 +11,7 @@ import PlaylistContainer from './containers/PlaylistContainer';
 import LyricsContainer from './containers/LyricsContainer';
 import StationsContainer from './containers/StationsContainer';
 
-import Stations from './components/Stations';
+import Station from './components/Station';
 import App from './components/App';
 import Albums from './components/Albums';
 import Songs from './components/Songs';
@@ -63,6 +63,7 @@ ReactDOM.render(
       <Route path="/" component={App} onEnter={onAppEnter}>
         <Route path="/albums" component={AlbumsContainer} />
         <Route path="/stations" component={StationsContainer} onEnter={onStationsEnter} />
+        <Route path="/stations/:genreName" component={Station} />
         <Route path="/albums/:albumId" component={AlbumContainer} onEnter={onAlbumEnter} />
         <Route path="/artists" component={FilterableArtistsContainer} />
         <Route path="/artists/:artistId" component={ArtistContainer} onEnter={onArtistEnter}>
