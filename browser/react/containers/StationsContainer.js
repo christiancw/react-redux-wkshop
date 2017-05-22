@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import Stations from '../Components/Stations';
+import React, {Component} from 'react';
 
 const convertsongsToStations = function (songsArray) {
     const Stations = {};
     songsArray.forEach((song) => {
       let songGenre = song.genre;
     if (!Stations.songGenre){
-      Stations[songGenre] = [].push(song);
+      Stations[songGenre] = [song];
     }
     else {
       Stations[songGenre].push(song);
@@ -24,8 +25,6 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return {};
 }
-
-console.log(Stations);
 
 const StationsContainer = connect(mapStateToProps,
   mapDispatchToProps)(Stations);
